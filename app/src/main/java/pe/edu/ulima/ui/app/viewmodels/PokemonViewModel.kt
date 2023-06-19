@@ -42,11 +42,12 @@ class PokemonViewModel : ViewModel() {
     }
 
     fun getImagenById(id: Int): String {
-        return UserService.fetchOne(id).imagen
+        //return UserService.fetchOne(id).imagen
+
     }
 
     fun getNameById(id: Int): String {
-        return UserService.fetchOne(id).nombre
+        //return UserService.fetchOne(id).nombre
     }
 
     private val _selectedId = mutableStateOf<Int?>(

@@ -3,8 +3,11 @@ package pe.edu.ulima.services
 import pe.edu.ulima.models.Seguido
 import pe.edu.ulima.models.Seguidor
 import pe.edu.ulima.models.Usuario
+import retrofit2.http.GET
 
+/*
 class SeguidoService {
+
     companion object {
         fun fetchAll(): List<Seguido> {
             return listOf(
@@ -66,4 +69,10 @@ class SeguidoService {
             return respuesta
         }
     }
+}
+*/
+
+interface SeguidoService {
+    @GET("/user/follower")
+    fun fetchSeguidos(userId: Int): List<Usuario>
 }

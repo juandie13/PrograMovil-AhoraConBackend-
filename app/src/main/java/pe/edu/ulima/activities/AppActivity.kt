@@ -1,8 +1,10 @@
 package pe.edu.ulima.activities
 
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
@@ -17,6 +19,7 @@ import pe.edu.ulima.ui.app.uis.SeguidoresScreen
 import pe.edu.ulima.ui.app.viewmodels.*
 
 class AppActivity : ComponentActivity() {
+    @RequiresApi(Build.VERSION_CODES.P)
     @ExperimentalMaterialApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

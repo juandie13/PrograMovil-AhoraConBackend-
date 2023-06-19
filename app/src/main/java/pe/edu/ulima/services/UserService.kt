@@ -1,11 +1,18 @@
 package pe.edu.ulima.services
 
+import pe.edu.ulima.models.Pokemon
 import pe.edu.ulima.models.Usuario
+import retrofit2.Call
+import retrofit2.http.POST
+import retrofit2.http.Path
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
+/*
 class UserService {
+
     companion object {
+
         val usuarios = listOf(
             Usuario (1, "admin","123", "Super Administrador", "root@ulima.edu.pe", "https://pokefanaticos.com/pokedex/assets/images/pokemon_imagenes/1.png"),
             Usuario (2, "pepe","123", "Pepe Valdivia", "pepe@ulima.edu.pe", "https://pokefanaticos.com/pokedex/assets/images/pokemon_imagenes/2.png"),
@@ -67,3 +74,26 @@ class UserService {
         }
     }
 }
+*/
+
+interface UserService {
+
+    @POST("/user/create")
+    fun user_create(
+        @Path("user") user: String,
+        @Path("password") password: String,
+        @Path("email") email: String,
+        @Path("image_url") image_url: String
+    ): Call<Usuario>
+
+    @POST("/user/reset_password")
+    fun validate_password(@Path("email") email: String): Call<Usuario>
+
+    @POST("/user/validate")
+    fun validate(@Path("user") user: String, @Path("password") password: String): Call<Usuario>
+
+    fun fetchOne(
+        @Path("id") id: Int
+    ): Call<Usuario>
+}
+

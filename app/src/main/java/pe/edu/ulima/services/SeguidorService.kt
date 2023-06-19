@@ -3,8 +3,9 @@ package pe.edu.ulima.services
 import pe.edu.ulima.models.Imagen
 import pe.edu.ulima.models.Seguidor
 import pe.edu.ulima.models.Usuario
+import retrofit2.http.GET
 
-class SeguidorService {
+/*class SeguidorService {
     companion object {
         fun fetchAll(): List<Seguidor> {
             return listOf(
@@ -89,4 +90,9 @@ class SeguidorService {
             return respuesta
         }
     }
+}
+*/
+interface SeguidorService {
+    @GET("/user/following")
+    fun fetchSeguidores(userId: Int): List<Usuario>
 }
